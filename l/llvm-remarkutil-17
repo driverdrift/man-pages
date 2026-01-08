@@ -1,0 +1,83 @@
+LLVM-REMARKUTIL(1)                   LLVM                   LLVM-REMARKUTIL(1)
+
+NAME
+       llvm-remarkutil - Remark utility
+
+SYNOPSIS
+       llvm-remarkutil [subcommmand] [options]
+
+DESCRIPTION
+       Utility for displaying information from, and converting between differ‐
+       ent remark formats.
+
+SUBCOMMANDS
+          • bitstream2yaml - Reserialize bitstream remarks to YAML.
+
+          • yaml2bitstream - Reserialize YAML remarks to bitstream.
+
+          • instruction-count - Output function instruction counts.
+
+          • annotation-count  -  Output  remark type count from annotation re‐
+            marks.
+
+   bitstream2yaml
+       USAGE: llvm-remarkutil bitstream2yaml <input file> -o <output file>
+
+   Summary
+       Takes a bitstream remark file as input, and reserializes that  file  as
+       YAML.
+
+   yaml2bitstream
+       USAGE: llvm-remarkutil yaml2bitstream <input file> -o <output file>
+
+   Summary
+       Takes  a  YAML  remark file as input, and reserializes that file in the
+       bitstream format.
+
+   instruction-count
+       USAGE: llvm-remarkutil  instruction-count  <input  file>  –parser=<bit‐
+       stream|yaml> [–use-debug-loc] -o <output file>
+
+   Summary
+       Outputs instruction count remarks for every function. Instruction count
+       remarks  encode  the  number  of instructions in a function at assembly
+       printing time.
+
+       Instruction count remarks require asm-printer remarks.
+
+       CSV format is as follows:
+
+       ::     Function,InstructionCount foo,123
+
+       if –use-debug-loc is passed then the CSV will include the source  path,
+       line number and column.
+
+       ::     Source,Function,InstructionCount path:line:column,foo,3
+
+   annotation-count
+       USAGE:  llvm-remarkutil  annotation-count  <input  file>  –parser=<bit‐
+       stream|yaml> –annotation-type=<type>  [–use-debug-loc] -o <output file>
+
+   Summary
+       Outputs a count for annotation-type <type> remark for  every  function.
+       The  count  expresses the number of remark checks inserted at the func‐
+       tion.
+
+       Annotation count remarks require AnnotationRemarksPass remarks.
+
+       CSV format is as follows:
+
+       ::     Function,Count foo,123
+
+       if –use-debug-loc is passed then the CSV will include the source  path,
+       line number and column.
+
+       ::     Source,Function,Count path:line:column,foo,3
+
+AUTHOR
+       Maintained by the LLVM Team (https://llvm.org/).
+
+COPYRIGHT
+       2003-2024, LLVM Project
+
+15                                2024-04-14                LLVM-REMARKUTIL(1)

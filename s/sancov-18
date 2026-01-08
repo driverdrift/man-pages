@@ -1,0 +1,82 @@
+SANCOV(1)                        User Commands                       SANCOV(1)
+
+NAME
+       sancov - manual page for sancov 18
+
+DESCRIPTION
+       OVERVIEW: Sanitizer Coverage Processing Tool (sancov)
+
+              This tool can extract various coverage-related information from:
+              coverage-instrumented  binary files, raw .sancov files and their
+              symbolized .symcov version.  Depending on chosen action the tool
+              expects different input files:
+
+       -print-coverage-pcs     - coverage-instrumented binary files
+
+       -print-coverage         - .sancov files
+
+       <other actions>
+              - .sancov files & corresponding binary files, .symcov files
+
+       USAGE: sancov [options] <action> <binary files...>  <.sancov  files...>
+       <.symcov files...>
+
+   Action (required):
+       -covered-functions
+              Print all covered funcions.
+
+       -html-report
+              REMOVED. Use -symbolize & coverage-report-server.py.
+
+       -merge Merges reports.
+
+       -not-covered-functions Print all not covered funcions.
+
+       -print-coverage-pcs
+              Print coverage instrumentation points addresses.
+
+       -print-coverage-stats
+              Print coverage statistics.
+
+       -print Print coverage addresses
+
+       -symbolize
+              Produces a symbolized JSON report from binary report.
+
+   Generic Options:
+       -help  Display this help
+
+       -h     Alias for --help
+
+       -version Display the version
+
+       -v     Alias for --version
+
+   OPTIONS:
+       -demangle=0
+              Alias for --no-demangle
+
+       -demangle
+              Demangle function names
+
+       -ignorelist=<string> Ignorelist file (sanitizer ignorelist format)
+
+       -no-demangle
+              Do not demangle function names
+
+       -no-skip-dead-files
+              List dead source files in reports
+
+       -skip-dead-files=0
+              Alias for --no-skip-dead-files
+
+       -skip-dead-files
+              Do not list dead source files in reports
+
+       -strip_path_prefix=<string>
+              Strip this prefix from files paths in reports
+
+       -use_default_ignorelist=0
+              Alias for --no-use_default_ignore_list
+
+sancov 18                          May 2024                          SANCOV(1)

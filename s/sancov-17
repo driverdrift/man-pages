@@ -1,0 +1,69 @@
+SANCOV(1)                        User Commands                       SANCOV(1)
+
+NAME
+       sancov - manual page for sancov 17
+
+DESCRIPTION
+       OVERVIEW: Sanitizer Coverage Processing Tool (sancov)
+
+              This tool can extract various coverage-related information from:
+              coverage-instrumented  binary files, raw .sancov files and their
+              symbolized .symcov version.  Depending on chosen action the tool
+              expects different input files:
+
+       -print-coverage-pcs     - coverage-instrumented binary files
+
+       -print-coverage         - .sancov files
+
+       <other actions>
+              - .sancov files & corresponding binary files, .symcov files
+
+       USAGE: sancov [options] <action> <binary files...>  <.sancov  files...>
+       <.symcov files...>
+
+       OPTIONS:
+
+       Generic Options:
+
+       --help                       - Display available options (--help-hidden
+              for more)
+
+       --help-list                    -  Display  list  of  available  options
+              (--help-list-hidden for more)
+
+       --version                    - Display the version of this program
+
+       sancov Options:
+
+       --demangle                   - Print demangled function name
+
+       --ignorelist=<string>        - Ignorelist  file  (sanitizer  ignorelist
+              format)
+
+              Action (required)
+
+       --print                     - Print coverage addresses
+
+       --print-coverage-pcs        - Print coverage instrumentation points ad‐
+              dresses.
+
+       --covered-functions         - Print all covered funcions.
+
+       --not-covered-functions     - Print all not covered funcions.
+
+       --print-coverage-stats      - Print coverage statistics.
+
+       --html-report                -  REMOVED.  Use -symbolize & coverage-re‐
+              port-server.py.
+
+       --symbolize                 - Produces a symbolized  JSON  report  from
+              binary report.
+
+       --merge                     - Merges reports.
+
+       --skip-dead-files            - Do not list dead source files in reports
+
+       --strip_path_prefix=<string> - Strip this prefix from file paths in re‐
+              ports
+
+sancov 17                         April 2024                         SANCOV(1)

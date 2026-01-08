@@ -1,0 +1,21 @@
+LSVMBUS(8)                  System Manager's Manual                 LSVMBUS(8)
+
+NAME
+       lsvmbus - List Hyper-V VMBus devices
+
+SYNOPSIS
+       lsvmbus [-vv]
+
+DESCRIPTION
+       lsvmbus displays devices attached to the Hyper-V VMBus.
+
+OPTIONS
+       -v     With  -v more information is printed including the VMBus Rel_ID,
+              class ID, Rel_ID, and which channel is bound  to  which  virtual
+              processor.   Use  -vv  for  additional  detail including the De‐
+              vice_ID and the sysfs path.
+
+AUTHORS
+       Written by Dexuan Cui <decui@microsoft.com>
+
+                                                                    LSVMBUS(8)

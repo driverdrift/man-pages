@@ -1,0 +1,52 @@
+NETPLAN(8)                  System Manager's Manual                 NETPLAN(8)
+
+NAME
+       netplan - Netplan runtime CLI
+
+SYNOPSIS
+       netplan [--debug ] [generate|apply|try|get|set|status]
+
+DESCRIPTION
+       This  manual  page provides an overview of the Netplan runtime CLI com‐
+       mands.
+
+OPTIONS
+       --debug
+              Enable debug messages
+
+EXAMPLES
+       netplan generate converts Netplan YAML into configuration files  under‐
+       stood by the back ends ( systemd-networkd(8) or NetworkManager(8) ). It
+       does not apply the generated configuration.
+
+       netplan  apply  applies  the current Netplan configuration to a running
+       system.
+
+       netplan try [ --timeout 120 ] takes a netplan(5) configuration, applies
+       it, and automatically rolls it back if the user does  not  confirm  the
+       configuration within a time limit.
+
+       netplan   get   [   network.ethernets.eth0  ]  reads  YAML  files  from
+       /{etc,lib,run}/netplan/*.yaml and returns a merged view of the  current
+       configuration.
+
+       netplan  set  [  network.ethernets.eth0={dhcp4:  true,  dhcp6:  true} ]
+       writes a given key/value pair or  JSON  struct  into  a  YAML  file  in
+       /etc/netplan/ and validates its format.
+
+       netplan  status [ interface ] queries the current network configuration
+       and displays it in human-readable format.
+
+FILES
+       /etc/netplan/
+              Directory with YAML configuration files, describing the  network
+              configuration.
+
+SEE ALSO
+       netplan(5), netplan-generate(8), netplan-apply(8), netplan-try(8), net‐
+       plan-get(8), netplan-set(8), netplan-status(8).
+
+AUTHOR
+       Lukas Märdian (slyon@ubuntu.com).
+
+                                23 January 2025                     NETPLAN(8)

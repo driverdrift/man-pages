@@ -1,0 +1,23 @@
+LLVM-RANLIB(1)                   User Commands                  LLVM-RANLIB(1)
+
+NAME
+       llvm-ranlib - manual page for llvm-ranlib 16
+
+DESCRIPTION
+       OVERVIEW: LLVM ranlib
+
+       Generate an index for archives
+
+       USAGE: llvm-ranlib archive...
+
+   OPTIONS:
+
+       -h --help             - Display available options
+
+       -v --version          - Display the version of this program
+
+       -D                    - Use zero for timestamps and uids/gids (default)
+
+       -U                    - Use actual timestamps and uids/gids
+
+llvm-ranlib 16                    April 2024                    LLVM-RANLIB(1)
