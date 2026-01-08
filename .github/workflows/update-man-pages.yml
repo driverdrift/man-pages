@@ -1,0 +1,72 @@
+name: Update Linux Man Pages
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 0 1 * *'
+
+concurrency:
+  group: ${{ github.workflow }}
+  cancel-in-progress: false
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Cleanup old data
+        run: rm -rf [a-z] [#]
+
+      - name: Generate and Group Man Pages
+        shell: bash
+        run: |
+          declare -A commands
+          search_paths=("/bin" "/sbin" "/usr/bin" "/usr/sbin")
+          for path in "${search_paths[@]}"; do
+            if [ -d "$path" ]; then
+              for cmd in "$path"/*; do
+                if [ -f "$cmd" ]; then
+                  name=$(basename "$cmd")
+                  commands["$name"]=1
+                fi
+              done
+            fi
+          done
+
+          for name in "${!commands[@]}"; do
+            tmp=$(mktemp)
+            if man "$name" >"$tmp" 2>/dev/null; then
+              if [ ! -s "$tmp" ]; then
+                rm -f "$tmp"
+                continue
+              fi
+              first_char=$(echo "${name:0:1}" | tr '[:upper:]' '[:lower:]')
+              if [[ "$first_char" =~ [a-z] ]]; then
+                target_dir="$first_char"
+              else
+                target_dir="#"
+              fi
+              mkdir -p "$target_dir"
+              mv "$tmp" "$target_dir/$name"
+            else
+              rm -f "$tmp"
+            fi
+          done
+
+      - name: Commit and push changes
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add [a-z] [#]
+          if ! git diff --cached --quiet; then
+            git commit -m "Update man pages"
+            git pull --rebase origin main
+            git push origin main
+          fi
