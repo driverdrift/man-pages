@@ -70,6 +70,9 @@ ADDITIONAL COMMANDS
        gh-config(1)
               Manage configuration for gh
 
+       gh-copilot(1)
+              Run the GitHub Copilot CLI (preview)
+
        gh-extension(1)
               Manage gh extensions
 
@@ -122,4 +125,4 @@ EXAMPLE
        $ gh repo clone cli/cli
        $ gh pr checkout 321
 
-GitHub CLI 2.83.2                  Dec 2025                              GH(1)
+GitHub CLI 2.86.0                  Jan 2026                              GH(1)

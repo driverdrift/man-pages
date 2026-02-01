@@ -946,57 +946,62 @@ INFORMATIONAL WARNINGS
        hasExpiringTsaCert
               The timestamp will expire within one year on YYYY-MM-DD.
 
+       internalInconsistenciesDetected
+              This JAR contains internal inconsistencies detected during veri‐
+              fication that may result in different contents when reading  via
+              JarFile and JarInputStream.
+
        legacyAlg
-              An algorithm used is considered a security  risk  but  not  dis‐
+              An  algorithm  used  is  considered a security risk but not dis‐
               abled.
 
        noTimestamp
-              This  JAR  contains signatures that doesn't include a timestamp.
-              Without a timestamp, users may not be able to validate this  JAR
+              This JAR contains signatures that doesn't include  a  timestamp.
+              Without  a timestamp, users may not be able to validate this JAR
               file after the signer certificate's expiration date (YYYY-MM-DD)
               or after any future revocation date.
 
 EXAMPLE OF SIGNING A JAR FILE
-       Use  the following command to sign bundle.jar with the private key of a
-       user whose keystore alias is jane in a keystore named  mystore  in  the
+       Use the following command to sign bundle.jar with the private key of  a
+       user  whose  keystore  alias is jane in a keystore named mystore in the
        working directory and name the signed JAR file sbundle.jar:
 
               jarsigner -keystore /working/mystore -storepass   keystore_pass‐
-              word -keypass  private_key_password  -signedjar sbundle.jar bun‐
+              word  -keypass  private_key_password -signedjar sbundle.jar bun‐
               dle.jar jane
 
        There is no -sigfile specified in the previous command so the generated
-       .SF  and signature block files to be placed in the signed JAR file have
-       default names based on the alias name.   They  are  named  JANE.SF  and
+       .SF and signature block files to be placed in the signed JAR file  have
+       default  names  based  on  the  alias name.  They are named JANE.SF and
        JANE.RSA.
 
-       If  you  want to be prompted for the store password and the private key
+       If you want to be prompted for the store password and the  private  key
        password, then you could shorten the previous command to the following:
 
               jarsigner -keystore /working/mystore -signedjar sbundle.jar bun‐
               dle.jar jane
 
-       If the keystore is the default keystore (.keystore in your home  direc‐
+       If  the keystore is the default keystore (.keystore in your home direc‐
        tory), then you don't need to specify a keystore, as follows:
 
               jarsigner -signedjar sbundle.jar bundle.jar jane
 
-       If  you  want the signed JAR file to overwrite the input JAR file (bun‐
-       dle.jar), then you don't need to specify a -signedjar option,  as  fol‐
+       If you want the signed JAR file to overwrite the input JAR  file  (bun‐
+       dle.jar),  then  you don't need to specify a -signedjar option, as fol‐
        lows:
 
               jarsigner bundle.jar jane
 
 EXAMPLE OF VERIFYING A SIGNED JAR FILE
-       To  verify  a signed JAR file to ensure that the signature is valid and
-       the JAR file wasn't been tampered with, use a command such as the  fol‐
+       To verify a signed JAR file to ensure that the signature is  valid  and
+       the  JAR file wasn't been tampered with, use a command such as the fol‐
        lowing:
 
               jarsigner -verify ButtonDemo.jar
 
        When the verification is successful, jar verified is displayed.  Other‐
        wise, an error message is displayed.  You can get more information when
-       you  use the -verbose option.  A sample use of jarsigner with the -ver‐
+       you use the -verbose option.  A sample use of jarsigner with the  -ver‐
        bose option follows:
 
               jarsigner -verify -verbose ButtonDemo.jar
@@ -1032,10 +1037,10 @@ EXAMPLE OF VERIFYING A SIGNED JAR FILE
 EXAMPLE OF VERIFICATION WITH CERTIFICATE INFORMATION
        If you specify the -certs option with the -verify and -verbose options,
        then the output includes certificate information for each signer of the
-       JAR file.  The information includes the certificate  type,  the  signer
-       distinguished  name  information (when it is an X.509 certificate), and
-       in parentheses, the keystore alias for the signer when the  public  key
-       certificate  in  the  JAR file matches the one in a keystore entry, for
+       JAR  file.   The  information includes the certificate type, the signer
+       distinguished name information (when it is an X.509  certificate),  and
+       in  parentheses,  the keystore alias for the signer when the public key
+       certificate in the JAR file matches the one in a  keystore  entry,  for
        example:
 
               jarsigner -keystore $JAVA_HOME/lib/security/cacerts -verify -verbose -certs ButtonDemo.jar
@@ -1102,9 +1107,9 @@ EXAMPLE OF VERIFICATION WITH CERTIFICATE INFORMATION
 
               The signer certificate expired on 2018-02-01. However, the JAR will be valid until the timestamp expires on 2020-12-29.
 
-       If the certificate for a signer isn't an X.509 certificate, then  there
-       is  no distinguished name information.  In that case, just the certifi‐
-       cate type and the alias are shown.  For example, if the certificate  is
+       If  the certificate for a signer isn't an X.509 certificate, then there
+       is no distinguished name information.  In that case, just the  certifi‐
+       cate  type and the alias are shown.  For example, if the certificate is
        a  PGP  certificate,  and  the  alias  is  bob,  then  you  would  get:
        PGP, (bob).
 
