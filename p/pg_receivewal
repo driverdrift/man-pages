@@ -1,4 +1,4 @@
-PG_RECEIVEWAL(1)        PostgreSQL 16.11 Documentation        PG_RECEIVEWAL(1)
+PG_RECEIVEWAL(1)        PostgreSQL 16.12 Documentation        PG_RECEIVEWAL(1)
 
 NAME
        pg_receivewal - stream write-ahead logs from a PostgreSQL server
@@ -261,4 +261,4 @@ EXAMPLES
 SEE ALSO
        pg_basebackup(1)
 
-PostgreSQL 16.11                     2025                     PG_RECEIVEWAL(1)
+PostgreSQL 16.12                     2026                     PG_RECEIVEWAL(1)

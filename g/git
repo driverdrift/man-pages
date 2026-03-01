@@ -308,7 +308,7 @@ HIGH-LEVEL COMMANDS (PORCELAIN)
            Reapply commits on top of another base tip.
 
        git-reset(1)
-           Reset current HEAD to the specified state.
+           Set HEAD or the index to a known state.
 
        git-restore(1)
            Restore working tree files.
@@ -1642,4 +1642,4 @@ NOTES
         7. git-security@googlegroups.com
            mailto:git-security@googlegroups.com
 
-Git 2.52.0                        12/25/2025                            GIT(1)
+Git 2.53.0                        02/04/2026                            GIT(1)

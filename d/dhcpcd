@@ -441,38 +441,39 @@ DESCRIPTION
                Dumps  the  current  lease  for the interface to stdout.  If no
                interface is given then all interfaces are dumped.  Use the  -4
                or  -6 flags to specify an address family.  If a lease is piped
-               in via standard input then that is dumped.  In this case, spec‐
-               ifying an address family is mandatory.
+               in via standard input then use the special interface named - to
+               dump it.  In this case, specifying an address family is  manda‐
+               tory.
 
        -V, --variables
                Display a list of option codes, the associated variable and en‐
-               coding for use in dhcpcd-run-hooks(8).  Variables are  prefixed
-               with  new_  and  old_ unless the option number is -.  Variables
-               without an option are part of the DHCP message  and  cannot  be
+               coding  for use in dhcpcd-run-hooks(8).  Variables are prefixed
+               with new_ and old_ unless the option number  is  -.   Variables
+               without  an  option  are part of the DHCP message and cannot be
                directly requested.
 
        -W, --whitelist address[/cidr]
-               Only  accept  packets  from address[/cidr].  -X, --blacklist is
+               Only accept packets from address[/cidr].   -X,  --blacklist  is
                ignored if -W, --whitelist is set.
 
        -X, --blacklist address[/cidr]
                Ignore all packets from address[/cidr].
 
        -Z, --denyinterfaces pattern
-               When discovering interfaces, the interface name must not  match
-               pattern  which  is  a space or comma separated list of patterns
+               When  discovering interfaces, the interface name must not match
+               pattern which is a space or comma separated  list  of  patterns
                passed to fnmatch(3).
 
        -z, --allowinterfaces pattern
-               When discovering interfaces,  the  interface  name  must  match
-               pattern  which  is  a space or comma separated list of patterns
-               passed to fnmatch(3).  If the same interface is matched in  -Z,
+               When  discovering  interfaces,  the  interface  name must match
+               pattern which is a space or comma separated  list  of  patterns
+               passed  to fnmatch(3).  If the same interface is matched in -Z,
                --denyinterfaces then it is still denied.
 
        --inactive
-               Don't  start  any  interfaces other than those specified on the
+               Don't start any interfaces other than those  specified  on  the
                command line.  This allows dhcpcd to be started in Manager mode
-               and then wait for subsequent dhcpcd commands to start each  in‐
+               and  then wait for subsequent dhcpcd commands to start each in‐
                terface as required.
 
        --configure
@@ -480,38 +481,38 @@ DESCRIPTION
                haviour and sets if_configured=true.
 
        --noconfigure
-               dhcpcd  will  not configure the system at all.  This is only of
-               use if the --script that dhcpcd calls  at  each  network  event
-               configures  the  system  instead.   This  is different from -T,
-               --test mode in that it's not one shot and the  only  change  to
+               dhcpcd will not configure the system at all.  This is  only  of
+               use  if  the  --script  that dhcpcd calls at each network event
+               configures the system instead.   This  is  different  from  -T,
+               --test  mode  in  that it's not one shot and the only change to
                the environment is the addition of if_configured=false.
 
        --nodev
                Don't load any /dev management modules.
 
 3RDPARTY LINK MANAGEMENT
-       Some  interfaces  require  configuration by 3rd parties, such as PPP or
-       VPN.  When an interface configuration in dhcpcd is marked as STATIC  or
-       INFORM  without an address then dhcpcd will monitor the interface until
-       an address is added or removed from it and act accordingly.  For  point
-       to  point  interfaces (like PPP), a default route to its destination is
+       Some interfaces require configuration by 3rd parties, such  as  PPP  or
+       VPN.   When an interface configuration in dhcpcd is marked as STATIC or
+       INFORM without an address then dhcpcd will monitor the interface  until
+       an  address is added or removed from it and act accordingly.  For point
+       to point interfaces (like PPP), a default route to its  destination  is
        automatically added to the configuration.  If the point to point inter‐
-       face is configured for INFORM, then dhcpcd unicasts INFORM to the  des‐
+       face  is configured for INFORM, then dhcpcd unicasts INFORM to the des‐
        tination, otherwise it defaults to STATIC.
 
 NOTES
-       dhcpcd  requires  a  Berkeley Packet Filter, or BPF device on BSD based
+       dhcpcd requires a Berkeley Packet Filter, or BPF device  on  BSD  based
        systems and a Linux Socket Filter, or LPF device on Linux based systems
        for all IPv4 configuration.
 
        If restricting dhcpcd to a single interface and optionally address fam‐
-       ily via the command-line then all further calls to  dhcpcd  to  rebind,
-       reconfigure  or exit need to include the same restrictive flags so that
+       ily  via  the  command-line then all further calls to dhcpcd to rebind,
+       reconfigure or exit need to include the same restrictive flags so  that
        dhcpcd knows which process to signal.
 
        Some DHCP servers implement ClientID filtering.  If dhcpcd is replacing
        an in-use DHCP client then you might need to adjust the clientid option
-       dhcpcd sends to match.  If using a DUID in place of the ClientID,  edit
+       dhcpcd  sends to match.  If using a DUID in place of the ClientID, edit
        /var/lib/dhcpcd/duid accordingly.
 
 FILES
@@ -520,15 +521,15 @@ FILES
        them here.
 
        /usr/lib/dhcpcd/dhcpcd-run-hooks
-       Bourne  shell script that is run to configure or de-configure an inter‐
+       Bourne shell script that is run to configure or de-configure an  inter‐
        face.
 
        /usr/lib/x86_64-linux-gnu/dhcpcd/dev
        Linux /dev management modules.
 
        /usr/lib/dhcpcd/dhcpcd-hooks
-       A directory containing Bourne shell scripts that are run by  the  above
-       script.   Each  script can be disabled by using the -C, --nohook option
+       A  directory  containing Bourne shell scripts that are run by the above
+       script.  Each script can be disabled by using the -C,  --nohook  option
        described above.
 
        /var/lib/dhcpcd/duid
@@ -538,7 +539,7 @@ FILES
        Text file that holds a secret key known only to the host.
 
        /var/lib/dhcpcd/interface-ssid.lease
-       The actual DHCP message sent by the server.  We use this  when  reading
+       The  actual  DHCP message sent by the server.  We use this when reading
        the last lease and use the file's mtime as when it was issued.
 
        /var/lib/dhcpcd/interface-ssid.lease6
@@ -565,7 +566,7 @@ FILES
        Control socket to per interface daemon.
 
        /run/dhcpcd/interface.unpriv.sock
-       Unprivileged  socket  to  per  interface  daemon, only allows state re‐
+       Unprivileged socket to per interface  daemon,  only  allows  state  re‐
        trieval.
 
 SEE ALSO
@@ -573,11 +574,11 @@ SEE ALSO
        dhcpcd-run-hooks(8), resolvconf(8)
 
 STANDARDS
-       RFC 951,  RFC 1534,  RFC 2104,  RFC 2131, RFC 2132, RFC 2563, RFC 2855,
-       RFC 3004, RFC 3118, RFC 3203, RFC 3315, RFC 3361,  RFC 3633,  RFC 3396,
-       RFC 3397,  RFC 3442,  RFC 3495, RFC 3925, RFC 3927, RFC 4039, RFC 4075,
-       RFC 4242, RFC 4361, RFC 4390, RFC 4702, RFC 4074,  RFC 4861,  RFC 4833,
-       RFC 4941,  RFC 5227,  RFC 5942, RFC 5969, RFC 6106, RFC 6334, RFC 6355,
+       RFC 951, RFC 1534, RFC 2104, RFC 2131,  RFC 2132,  RFC 2563,  RFC 2855,
+       RFC 3004,  RFC 3118,  RFC 3203, RFC 3315, RFC 3361, RFC 3633, RFC 3396,
+       RFC 3397, RFC 3442, RFC 3495, RFC 3925, RFC 3927,  RFC 4039,  RFC 4075,
+       RFC 4242,  RFC 4361,  RFC 4390, RFC 4702, RFC 4074, RFC 4861, RFC 4833,
+       RFC 4941, RFC 5227, RFC 5942, RFC 5969, RFC 6106,  RFC 6334,  RFC 6355,
        RFC 6603, RFC 6704, RFC 7217, RFC 7550, RFC 7844.
 
 AUTHORS
@@ -586,4 +587,4 @@ AUTHORS
 BUGS
        Please report them to https://roy.marples.name/projects/dhcpcd
 
-Debian                         December 10, 2023                     DHCPCD(8)
+Debian                           June 17, 2024                       DHCPCD(8)

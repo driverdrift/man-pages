@@ -66,6 +66,20 @@ MYSQL CLIENT OPTIONS
 
            Display a help message and exit.
 
+       •   --authentication-oci-client-config-profile
+           ┌─────────────────────┬───────────────────────┐
+           │ Command-Line Format │ --authentication-oci- │
+           │                     │ client-config-        │
+           │                     │ profile=profileName   │
+           ├─────────────────────┼───────────────────────┤
+           │ Introduced          │ 8.0.33                │
+           ├─────────────────────┼───────────────────────┤
+           │ Type                │ String                │
+           └─────────────────────┴───────────────────────┘
+
+           Specify the name of the OCI configuration profile to use. If not
+           set, the default profile is used.
+
        •   --auto-rehash
            ┌─────────────────────┬──────────────────┐
            │ Command-Line Format │ --auto-rehash    │
@@ -2876,4 +2890,4 @@ SEE ALSO
 AUTHOR
        Oracle Corporation (http://dev.mysql.com/).
 
-MySQL 8.0                         09/08/2025                          MYSQL(1)
+MySQL 8.0                         12/11/2025                          MYSQL(1)

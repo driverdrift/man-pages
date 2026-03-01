@@ -1371,28 +1371,7 @@ DESCRIPTION
            ├─────────────────────┼──────────────────────────────┤
            │ Default Value       │                              │
            ├─────────────────────┼──────────────────────────────┤
-           │ Valid Values        │                              │
-           │                     │            ansi              │
-           │                     │                              │
-           │                     │            mysql323          │
-           │                     │                              │
-           │                     │            mysql40           │
-           │                     │                              │
-           │                     │            postgresql        │
-           │                     │                              │
-           │                     │            oracle            │
-           │                     │                              │
-           │                     │            mssql             │
-           │                     │                              │
-           │                     │            db2               │
-           │                     │                              │
-           │                     │            maxdb             │
-           │                     │                              │
-           │                     │            no_key_options    │
-           │                     │                              │
-           │                     │            no_table_options  │
-           │                     │                              │
-           │                     │            no_key_options    │
+           │ Valid Values        │ ansi                         │
            └─────────────────────┴──────────────────────────────┘
 
            Produce output that is more compatible with other database systems
@@ -2295,4 +2274,4 @@ SEE ALSO
 AUTHOR
        Oracle Corporation (http://dev.mysql.com/).
 
-MySQL 8.0                         09/08/2025                      MYSQLDUMP(1)
+MySQL 8.0                         12/11/2025                      MYSQLDUMP(1)

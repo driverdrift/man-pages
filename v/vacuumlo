@@ -1,4 +1,4 @@
-VACUUMLO(1)             PostgreSQL 16.11 Documentation             VACUUMLO(1)
+VACUUMLO(1)             PostgreSQL 16.12 Documentation             VACUUMLO(1)
 
 NAME
        vacuumlo - remove orphaned large objects from a PostgreSQL database
@@ -105,4 +105,4 @@ NOTES
 AUTHOR
        Peter Mount <peter@retep.org.uk>
 
-PostgreSQL 16.11                     2025                          VACUUMLO(1)
+PostgreSQL 16.12                     2026                          VACUUMLO(1)

@@ -82,6 +82,9 @@ ADDITIONAL COMMANDS
        gh-label(1)
               Manage labels
 
+       gh-licenses(1)
+              View third-party license information
+
        gh-preview(1)
               Execute previews for gh features
 
@@ -125,4 +128,4 @@ EXAMPLE
        $ gh repo clone cli/cli
        $ gh pr checkout 321
 
-GitHub CLI 2.86.0                  Jan 2026                              GH(1)
+GitHub CLI 2.87.3                  Feb 2026                              GH(1)

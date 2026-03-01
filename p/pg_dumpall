@@ -1,4 +1,4 @@
-PG_DUMPALL(1)           PostgreSQL 16.11 Documentation           PG_DUMPALL(1)
+PG_DUMPALL(1)           PostgreSQL 16.12 Documentation           PG_DUMPALL(1)
 
 NAME
        pg_dumpall - extract a PostgreSQL database cluster into a script file
@@ -428,4 +428,4 @@ EXAMPLES
 SEE ALSO
        Check pg_dump(1) for details on possible error conditions.
 
-PostgreSQL 16.11                     2025                        PG_DUMPALL(1)
+PostgreSQL 16.12                     2026                        PG_DUMPALL(1)

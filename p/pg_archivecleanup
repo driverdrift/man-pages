@@ -1,4 +1,4 @@
-PG_ARCHIVECLEANUP(1)    PostgreSQL 16.11 Documentation    PG_ARCHIVECLEANUP(1)
+PG_ARCHIVECLEANUP(1)    PostgreSQL 16.12 Documentation    PG_ARCHIVECLEANUP(1)
 
 NAME
        pg_archivecleanup - clean up PostgreSQL WAL archive files
@@ -99,4 +99,4 @@ EXAMPLES
 
        •   remove no-longer-needed files from the archive directory
 
-PostgreSQL 16.11                     2025                 PG_ARCHIVECLEANUP(1)
+PostgreSQL 16.12                     2026                 PG_ARCHIVECLEANUP(1)

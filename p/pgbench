@@ -1,4 +1,4 @@
-PGBENCH(1)              PostgreSQL 16.11 Documentation              PGBENCH(1)
+PGBENCH(1)              PostgreSQL 16.12 Documentation              PGBENCH(1)
 
 NAME
        pgbench - run a benchmark test on PostgreSQL
@@ -1688,4 +1688,4 @@ NOTES
        secure schema usage pattern, do not run pgbench in that database.
        pgbench uses unqualified names and does not manipulate the search path.
 
-PostgreSQL 16.11                     2025                           PGBENCH(1)
+PostgreSQL 16.12                     2026                           PGBENCH(1)

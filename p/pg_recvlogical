@@ -1,4 +1,4 @@
-PG_RECVLOGICAL(1)       PostgreSQL 16.11 Documentation       PG_RECVLOGICAL(1)
+PG_RECVLOGICAL(1)       PostgreSQL 16.12 Documentation       PG_RECVLOGICAL(1)
 
 NAME
        pg_recvlogical - control PostgreSQL logical decoding streams
@@ -224,4 +224,4 @@ EXAMPLES
 SEE ALSO
        pg_receivewal(1)
 
-PostgreSQL 16.11                     2025                    PG_RECVLOGICAL(1)
+PostgreSQL 16.12                     2026                    PG_RECVLOGICAL(1)

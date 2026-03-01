@@ -23,4 +23,4 @@ DESCRIPTION
        information.  These options will allow this script to be a stable
        interface even in that environment.
 
-Debian GNU/Linux                  2025-06-12                     PAM_GETENV(8)
+Debian GNU/Linux                  2025-09-15                     PAM_GETENV(8)

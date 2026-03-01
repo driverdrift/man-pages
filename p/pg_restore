@@ -1,4 +1,4 @@
-PG_RESTORE(1)           PostgreSQL 16.11 Documentation           PG_RESTORE(1)
+PG_RESTORE(1)           PostgreSQL 16.12 Documentation           PG_RESTORE(1)
 
 NAME
        pg_restore - restore a PostgreSQL database from an archive file created
@@ -561,4 +561,4 @@ EXAMPLES
 SEE ALSO
        pg_dump(1), pg_dumpall(1), psql(1)
 
-PostgreSQL 16.11                     2025                        PG_RESTORE(1)
+PostgreSQL 16.12                     2026                        PG_RESTORE(1)

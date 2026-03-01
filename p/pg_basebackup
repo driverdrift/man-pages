@@ -1,4 +1,4 @@
-PG_BASEBACKUP(1)        PostgreSQL 16.11 Documentation        PG_BASEBACKUP(1)
+PG_BASEBACKUP(1)        PostgreSQL 16.12 Documentation        PG_BASEBACKUP(1)
 
 NAME
        pg_basebackup - take a base backup of a PostgreSQL cluster
@@ -573,4 +573,4 @@ EXAMPLES
 SEE ALSO
        pg_dump(1), Section 28.4.6
 
-PostgreSQL 16.11                     2025                     PG_BASEBACKUP(1)
+PostgreSQL 16.12                     2026                     PG_BASEBACKUP(1)

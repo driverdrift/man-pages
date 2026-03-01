@@ -71,6 +71,9 @@ DESCRIPTION
        --help-sms
               Show SMS service options
 
+       --help-intel-at-tunnel
+              Show Intel AT Tunnel Service options
+
    Basic Connect options:
        --query-device-caps
               Query device capabilities
@@ -413,6 +416,10 @@ DESCRIPTION
        --sms-read=[(all|new|old|sent|draft|index=N)]
               Read all SMS matching a given filter
 
+   Intel AT Tunnel options:
+       --intel-at-tunnel-set-at-command="<AT command>"
+              send AT command to modem, and receive AT response
+
    Application Options:
        -d, --device=[PATH]
               Specify device path
@@ -466,4 +473,4 @@ SEE ALSO
 
        should give you access to the complete manual.
 
-mbimcli 1.31.2                    March 2024                        MBIMCLI(1)
+mbimcli 1.31.2                   October 2025                       MBIMCLI(1)

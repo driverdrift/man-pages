@@ -53,4 +53,4 @@ SEE ALSO
        apparmor(7),         apparmor.d(5),        aa_is_enabled(2),        and
        <https://wiki.apparmor.net>.
 
-AppArmor 4.0.1                    2025-03-19                     AA-ENABLED(1)
+AppArmor 4.0.1                    2025-08-15                     AA-ENABLED(1)

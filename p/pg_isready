@@ -1,4 +1,4 @@
-PG_ISREADY(1)           PostgreSQL 16.11 Documentation           PG_ISREADY(1)
+PG_ISREADY(1)           PostgreSQL 16.12 Documentation           PG_ISREADY(1)
 
 NAME
        pg_isready - check the connection status of a PostgreSQL server
@@ -97,4 +97,4 @@ EXAMPLES
            $ echo $?
            2
 
-PostgreSQL 16.11                     2025                        PG_ISREADY(1)
+PostgreSQL 16.12                     2026                        PG_ISREADY(1)

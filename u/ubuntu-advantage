@@ -89,8 +89,8 @@ COMMANDS
        [service ...]
               Disable one or more Ubuntu Pro services.
 
-       enable [-h] [--assume-yes] [--access-only] [--beta] [--format
-       {cli,json}] [--variant VARIANT] service [service ...]
+       enable [-h] [--access-only] [--assume-yes] [--auto] [--beta] [--format
+       {cli,json}] [--variant VARIANT] [service ...]
               Activate and configure this machine's  access  to  one  or  more
               Ubuntu Pro services.
 

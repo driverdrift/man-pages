@@ -77,63 +77,69 @@ COMPONENTS
 
               See  sos help --help and  man sos-help for more information.
 
+       upload This subcommand uploads an input file to either a  distribution-
+              defined or a user-defined target. The file can be an SOS archive
+              or any other type of file, such as a vmcore or log file.
+
+              See  sos upload --help and  man sos-upload for more information.
+
 GLOBAL OPTIONS
-       sos components provide their own set of options, however the  following
+       sos  components provide their own set of options, however the following
        are available to be set across all components.
 
-       --batch  Do not prompt interactively, user will not be prompted for any
+       --batch Do not prompt interactively, user will not be prompted for  any
        data
 
        --encrypt
               Encrypt the resulting archive, and determine the method by which
-              that encryption is done by either a user prompt  or  environment
+              that  encryption  is done by either a user prompt or environment
               variables.
 
-              When  run with --batch, using this option will cause sos to look
+              When run with --batch, using this option will cause sos to  look
               for either the SOSENCRYPTKEY or SOSENCRYPTPASS environment vari‐
-              ables. If set, this will implicitly enable the --encrypt-key  or
-              --encrypt-pass  options,  respectively, to the values set by the
-              environment variable. This enables  the  use  of  these  options
-              without  directly setting those options in a config file or com‐
-              mand line string. Note that use of an encryption key has  prece‐
+              ables.  If set, this will implicitly enable the --encrypt-key or
+              --encrypt-pass options, respectively, to the values set  by  the
+              environment  variable.  This  enables  the  use of these options
+              without directly setting those options in a config file or  com‐
+              mand  line string. Note that use of an encryption key has prece‐
               dence over a passphrase.
 
-              Otherwise,  using  this option will cause sos to prompt the user
-              to choose the method of  encryption  to  use.  Choices  will  be
-              [P]assphrase,   [K]ey,  [E]nv  vars,  or  [N]o  encryption.   If
+              Otherwise, using this option will cause sos to prompt  the  user
+              to  choose  the  method  of  encryption  to use. Choices will be
+              [P]assphrase,  [K]ey,  [E]nv  vars,  or  [N]o  encryption.    If
               passphrase or key the user will then be prompted for the respec‐
               tive value, env vars will cause sos to source the information in
               the manner stated above, and choosing no encryption will disable
               encryption.
 
-              See the sections on --encrypt-key and --encrypt-pass  below  for
+              See  the  sections on --encrypt-key and --encrypt-pass below for
               more information.
 
        --encrypt-key KEY
-              Encrypts  the  resulting  archive that sos report produces using
-              GPG. KEY must be an existing key in the user's  keyring  as  GPG
-              does  not  allow for keyfiles.  KEY can be any value accepted by
+              Encrypts the resulting archive that sos  report  produces  using
+              GPG.  KEY  must  be an existing key in the user's keyring as GPG
+              does not allow for keyfiles.  KEY can be any value  accepted  by
               gpg's 'recipient' option.
 
               Note that the user running sos report must match the user owning
               the keyring from which keys will be obtained. In particular this
-              means that if sudo is used to run sos report, the  keyring  must
-              also  be  set  up  using sudo (or direct shell access to the ac‐
+              means  that  if sudo is used to run sos report, the keyring must
+              also be set up using sudo (or direct shell  access  to  the  ac‐
               count).
 
               Users should be aware that encrypting the final archive will re‐
-              sult in sos using double the amount of temporary  disk  space  -
+              sult  in  sos  using double the amount of temporary disk space -
               the encrypted archive must be written as a separate, rather than
-              replacement,  file within the temp directory that sos writes the
-              archive to. However, since the encrypted  archive  will  be  the
-              same  size as the original archive, there is no additional space
-              consumption once the temporary directory is removed at  the  end
+              replacement, file within the temp directory that sos writes  the
+              archive  to.  However,  since  the encrypted archive will be the
+              same size as the original archive, there is no additional  space
+              consumption  once  the temporary directory is removed at the end
               of execution.
 
-              This  means  that  only the encrypted archive is present on disk
+              This means that only the encrypted archive is  present  on  disk
               after sos finishes running.
 
-              If encryption fails for any  reason,  the  original  unencrypted
+              If  encryption  fails  for  any reason, the original unencrypted
               archive is preserved instead.
 
        --encrypt-pass PASS
@@ -151,20 +157,20 @@ GLOBAL OPTIONS
               tion.
 
        --threads THREADS
-              Specify  the  number  of threads sos report will use for concur‐
+              Specify the number of threads sos report will  use  for  concur‐
               rency. Defaults to 4.
 
        -v, --verbose
-              Increase logging verbosity. May be specified multiple  times  to
+              Increase  logging  verbosity. May be specified multiple times to
               enable additional debugging messages.
 
-              The  following  table  summarizes  the effects of different ver‐
+              The following table summarizes the  effects  of  different  ver‐
               bosity levels:
 
                   1 (-v)   :  Enable debug messages for sos.log. Show individ‐
               ual plugins starting.
                   2 (-vv)  :  Also print debug messages to console.
-                  3 (-vvv) :  Enable debug messages for  archive  file  opera‐
+                  3  (-vvv)  :   Enable debug messages for archive file opera‐
               tions. Note this will dramatically
                               increase the amount of logging.
 
@@ -172,7 +178,7 @@ GLOBAL OPTIONS
               Only log fatal errors to stderr.
 
        -z, --compression-type {auto|xz|gzip}
-              Compression  type to use when compression the final archive out‐
+              Compression type to use when compression the final archive  out‐
               put
 
        --help Display usage message.
@@ -181,7 +187,7 @@ SEE ALSO
        sos.conf(5)
 
 MAINTAINER
-       Maintained on GitHub at https://github.com/sos report/sos
+       Maintained on GitHub at https://github.com/sosreport/sos
 
 AUTHORS & CONTRIBUTORS
        See AUTHORS file in the package documentation.

@@ -1,4 +1,4 @@
-PSQL(1)                 PostgreSQL 16.11 Documentation                 PSQL(1)
+PSQL(1)                 PostgreSQL 16.12 Documentation                 PSQL(1)
 
 NAME
        psql - PostgreSQL interactive terminal
@@ -367,7 +367,7 @@ USAGE
        =>. For example:
 
            $ psql testdb
-           psql (16.11)
+           psql (16.12)
            Type "help" for help.
 
            testdb=>
@@ -2621,7 +2621,7 @@ FILES
            Both the system-wide startup file and the user's personal startup
            file can be made psql-version-specific by appending a dash and the
            PostgreSQL major or minor release identifier to the file name, for
-           example ~/.psqlrc-16 or ~/.psqlrc-16.11. The most specific
+           example ~/.psqlrc-16 or ~/.psqlrc-16.12. The most specific
            version-matching file will be read in preference to a
            non-version-specific file. These version suffixes are added after
            determining the file path as explained above.
@@ -2842,4 +2842,4 @@ EXAMPLES
             1 | 101 | 102 | 103 | 104
            (4 rows)
 
-PostgreSQL 16.11                     2025                              PSQL(1)
+PostgreSQL 16.12                     2026                              PSQL(1)

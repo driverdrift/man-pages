@@ -1,4 +1,4 @@
-CREATEDB(1)             PostgreSQL 16.11 Documentation             CREATEDB(1)
+CREATEDB(1)             PostgreSQL 16.12 Documentation             CREATEDB(1)
 
 NAME
        createdb - create a new PostgreSQL database
@@ -184,4 +184,4 @@ EXAMPLES
 SEE ALSO
        dropdb(1), CREATE DATABASE (CREATE_DATABASE(7))
 
-PostgreSQL 16.11                     2025                          CREATEDB(1)
+PostgreSQL 16.12                     2026                          CREATEDB(1)

@@ -1,4 +1,4 @@
-DROPUSER(1)             PostgreSQL 16.11 Documentation             DROPUSER(1)
+DROPUSER(1)             PostgreSQL 16.12 Documentation             DROPUSER(1)
 
 NAME
        dropuser - remove a PostgreSQL user account
@@ -119,4 +119,4 @@ EXAMPLES
 SEE ALSO
        createuser(1), DROP ROLE (DROP_ROLE(7))
 
-PostgreSQL 16.11                     2025                          DROPUSER(1)
+PostgreSQL 16.12                     2026                          DROPUSER(1)

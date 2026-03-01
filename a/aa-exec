@@ -54,4 +54,4 @@ SEE ALSO
        aa_change_profile(3),              aa_change_onexec(3)              and
        <https://wiki.apparmor.net>.
 
-AppArmor 4.0.1                    2025-03-19                        AA-EXEC(1)
+AppArmor 4.0.1                    2025-08-15                        AA-EXEC(1)

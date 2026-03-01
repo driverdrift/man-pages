@@ -1,4 +1,4 @@
-CREATEUSER(1)           PostgreSQL 16.11 Documentation           CREATEUSER(1)
+CREATEUSER(1)           PostgreSQL 16.12 Documentation           CREATEUSER(1)
 
 NAME
        createuser - define a new PostgreSQL user account
@@ -243,7 +243,7 @@ EXAMPLES
            $ createuser -P -s -e joe
            Enter password for new role: xyzzy
            Enter it again: xyzzy
-           CREATE ROLE joe PASSWORD 'md5b5f5ba1a423792b526f799ae4eb3d59e' SUPERUSER CREATEDB CREATEROLE INHERIT LOGIN;
+           CREATE ROLE joe PASSWORD 'SCRAM-SHA-256$4096:44560wPMLfjqiAzyPDZ/eQ==$4CA054rZlSFEq8Z3FEhToBTa2X6KnWFxFkPwIbKoDe0=:L/nbSZRCjp6RhOhKK56GoR1zibCCSePKshCJ9lnl3yw=' SUPERUSER CREATEDB CREATEROLE INHERIT LOGIN NOREPLICATION NOBYPASSRLS;
 
        In the above example, the new password isn't actually echoed when
        typed, but we show what was typed for clarity. As you see, the password
@@ -252,4 +252,4 @@ EXAMPLES
 SEE ALSO
        dropuser(1), CREATE ROLE (CREATE_ROLE(7)), createrole_self_grant
 
-PostgreSQL 16.11                     2025                        CREATEUSER(1)
+PostgreSQL 16.12                     2026                        CREATEUSER(1)

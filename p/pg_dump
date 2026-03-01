@@ -1,4 +1,4 @@
-PG_DUMP(1)              PostgreSQL 16.11 Documentation              PG_DUMP(1)
+PG_DUMP(1)              PostgreSQL 16.12 Documentation              PG_DUMP(1)
 
 NAME
        pg_dump - extract a PostgreSQL database into a script file or other
@@ -904,4 +904,4 @@ EXAMPLES
 SEE ALSO
        pg_dumpall(1), pg_restore(1), psql(1)
 
-PostgreSQL 16.11                     2025                           PG_DUMP(1)
+PostgreSQL 16.12                     2026                           PG_DUMP(1)

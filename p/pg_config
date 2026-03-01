@@ -1,4 +1,4 @@
-PG_CONFIG(1)             PostgreSQL 18.1 Documentation            PG_CONFIG(1)
+PG_CONFIG(1)             PostgreSQL 18.2 Documentation            PG_CONFIG(1)
 
 NAME
        pg_config - retrieve information about the installed version of
@@ -134,4 +134,4 @@ EXAMPLE
        arguments with spaces are represented correctly. Therefore, using eval
        is required for proper results.
 
-PostgreSQL 18.1                      2025                         PG_CONFIG(1)
+PostgreSQL 18.2                      2026                         PG_CONFIG(1)

@@ -1,4 +1,4 @@
-VACUUMDB(1)             PostgreSQL 16.11 Documentation             VACUUMDB(1)
+VACUUMDB(1)             PostgreSQL 16.12 Documentation             VACUUMDB(1)
 
 NAME
        vacuumdb - garbage-collect and analyze a PostgreSQL database
@@ -273,4 +273,4 @@ EXAMPLES
 SEE ALSO
        VACUUM(7)
 
-PostgreSQL 16.11                     2025                          VACUUMDB(1)
+PostgreSQL 16.12                     2026                          VACUUMDB(1)

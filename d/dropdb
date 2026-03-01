@@ -1,4 +1,4 @@
-DROPDB(1)               PostgreSQL 16.11 Documentation               DROPDB(1)
+DROPDB(1)               PostgreSQL 16.12 Documentation               DROPDB(1)
 
 NAME
        dropdb - remove a PostgreSQL database
@@ -128,4 +128,4 @@ EXAMPLES
 SEE ALSO
        createdb(1), DROP DATABASE (DROP_DATABASE(7))
 
-PostgreSQL 16.11                     2025                            DROPDB(1)
+PostgreSQL 16.12                     2026                            DROPDB(1)
